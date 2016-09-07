@@ -32,7 +32,8 @@ const play = function(cell){
       $('.board').children().off();
       logic.scoreCounter(logic.player);
       setTimeout(function(){
-       logic.restartGameData();}, 3000);
+       logic.restartGameData();
+       restartGameUi();}, 3000);
     } else {
       logic.turnSwitch();
     }
