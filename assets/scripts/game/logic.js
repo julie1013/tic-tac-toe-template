@@ -26,7 +26,7 @@ const initializeBoard = function () {
   currentGame.game.cells = board;
   console.log("currentGame is", currentGame);
   for (let i = 0; i < 9; i++) {
-    board.push("");
+    currentGame.game.cells.push("");
   }
   console.log(currentGame.game.cells);
 };
@@ -34,9 +34,9 @@ const initializeBoard = function () {
 
 const isPlayerTurn = function () {
   if (whoseTurn === 0) {
-    player = 'player_x';
+    player = 'x';
   } else {
-    player = 'player_o';
+    player = 'o';
   }
 
   return player;
@@ -106,7 +106,7 @@ const tieCheck = function () {
 
 const scoreCounter = function () {
   let winScore;
-  if (winner === 'player_x') {
+  if (winner === 'x') {
     winScore = xScore++;
   } else {
     winScore = oScore++;

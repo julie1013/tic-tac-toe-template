@@ -6,6 +6,9 @@ const ui = require('./ui');
 const play = function (cell) {
     logic.player = logic.isPlayerTurn();
     ui.setCell(cell, logic.player);
+
+    // log
+    console.log("logic.currentGame.game.cells array is");
     console.log(logic.currentGame.game.cells);
     if (logic.winCheck() || logic.tieCheck()) {
       $('.board').children().off();
