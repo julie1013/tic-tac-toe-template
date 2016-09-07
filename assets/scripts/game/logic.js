@@ -23,12 +23,12 @@ let currentGame = {
 };
 
 const initializeBoard = function () {
+  currentGame.game.cells = board;
   console.log("currentGame is", currentGame);
   for (let i = 0; i < 9; i++) {
     board.push("");
   }
-  currentGame.game.cells = board;
-  console.log(board);
+  console.log(currentGame.game.cells);
 };
 //sets up an array for the board
 
@@ -58,12 +58,12 @@ const isVacantCell = function (cell) {
 //checks if cell is vacant
 
 const horizontalWin = function () {
-    if (board[0] !== null && board[0] === board[1] && board[0] === board[2]) {
-      winner = board[0];
-    } else if (board[3] !== null && board[3] === board[4] && board[3] === board[5]) {
-      winner = board[3];
-    } else if (board[6] !== null && board[6] === board[7] && board[6] === board[8]) {
-      winner = board[6];
+    if (currentGame.game.cells[0] !== null && currentGame.game.cells[0] === currentGame.game.cells[1] && currentGame.game.cells[0] === currentGame.game.cells[2]) {
+      winner = currentGame.game.cells[0];
+    } else if (currentGame.game.cells[3] !== null && currentGame.game.cells[3] === currentGame.game.cells[4] && currentGame.game.cells[3] === currentGame.game.cells[5]) {
+      winner = currentGame.game.cells[3];
+    } else if (currentGame.game.cells[6] !== null && currentGame.game.cells[6] === currentGame.game.cells[7] && currentGame.game.cells[6] === currentGame.game.cells[8]) {
+      winner = currentGame.game.cells[6];
     }
 
     return winner;
@@ -71,12 +71,12 @@ const horizontalWin = function () {
 //checks for horizontal set up for possible win
 
 const verticalWin = function () {
-    if (board[0] !== null && board[0] === board[3] && board[0] === board[6]) {
-      winner = board[0];
-    } else if (board[1] !== null && board[1] === board[4] && board[1] === board[7]) {
-      winner = board[1];
-    } else if (board[2] !== null && board[2] === board[5] && board[2] === board[8]) {
-      winner = board[2];
+    if (currentGame.game.cells[0] !== null && currentGame.game.cells[0] === currentGame.game.cells[3] && currentGame.game.cells[0] === currentGame.game.cells[6]) {
+      winner = currentGame.game.cells[0];
+    } else if (currentGame.game.cells[1] !== null && currentGame.game.cells[1] === currentGame.game.cells[4] && currentGame.game.cells[1] === currentGame.game.cells[7]) {
+      winner = currentGame.game.cells[1];
+    } else if (currentGame.game.cells[2] !== null && currentGame.game.cells[2] === currentGame.game.cells[5] && currentGame.game.cells[2] === currentGame.game.cells[8]) {
+      winner = currentGame.game.cells[2];
     }
 
     return winner;
@@ -84,9 +84,9 @@ const verticalWin = function () {
 //checks for vertical setup for possible win
 
 const diagonalWin = function () {
-  if (board[4] !== null) {
-    if (board[4] === board[0] && board[4] === board[8] || board[4] === board[2] && board[4] === board[6]) {
-      winner = board[4];
+  if (currentGame.game.cells[4] !== null) {
+    if (currentGame.game.cells[4] === currentGame.game.cells[0] && currentGame.game.cells[4] === currentGame.game.cells[8] || currentGame.game.cells[4] === currentGame.game.cells[2] && currentGame.game.cells[4] === currentGame.game.cells[6]) {
+      winner = currentGame.game.cells[4];
     }
   }
 
@@ -117,8 +117,9 @@ const scoreCounter = function () {
 //keeps track of wins
 
 const restartGameData = function () {
-  currentGame.game.cells.splice(0, board.length);
-  initializeBoard(board);
+  currentGame.game.cells.splice(0, currentGame.game.cells.length);
+  currentGame.game.over = false;
+  initializeBoard(currentGame.game.cells);
   whoseTurn = 0;
   winner = null;
 };

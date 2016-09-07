@@ -1,7 +1,6 @@
 
 'use strict';
 
-const events = require('./events');
 const logic = require('./logic');
 
 const drawBoard = function (array) {
@@ -18,27 +17,7 @@ const setCell = function (cell, player) {
 };
 //visually updates cell with player token
 
-
-const play = function (cell) {
-    logic.player = logic.isPlayerTurn();
-    setCell(cell, logic.player);
-    if (logic.winCheck() || logic.tieCheck()) {
-      logic.currentGame.over = true;
-      $('.board').children().off();
-      logic.scoreCounter(logic.player);
-      setTimeout(function () {
-        logic.restartGameData();
-        $('.board div').children().remove();
-      }, 3000);
-    } else {
-      logic.turnSwitch();
-    }
-  };
-//player is able to play their token in a cell. If there's a winner or a tie,
-//the game restarts.
-
 module.exports = {
   drawBoard,
   setCell,
-  play,
 };
