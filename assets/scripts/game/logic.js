@@ -6,25 +6,44 @@ let winner;
 let xScore = 0;
 let oScore = 0;
 
-const initializeBoard = function(){
-  for (let i = 0; i < 9; i++){
-    board.push(null);
-    console.log(board);
+let currentGame = {
+  game: {
+    id: "",
+    cells:"",
+    over: false,
+    player_x : {
+      id: "",
+      email: ""
+    },
+    player_o: {
+      id: "",
+      email: ""
+    }
+  },
+};
+
+const initializeBoard = function () {
+  console.log("currentGame is", currentGame);
+  for (let i = 0; i < 9; i++) {
+    board.push("");
   }
+  currentGame.game.cells = board;
+  console.log(board);
 };
 //sets up an array for the board
 
-const isPlayerTurn = function(){
-  if (whoseTurn === 0){
+const isPlayerTurn = function () {
+  if (whoseTurn === 0) {
     player = 'x';
   } else {
     player = 'o';
   }
+
   return player;
 };
 //assigns turn to player
 
-const turnSwitch = function(){
+const turnSwitch = function () {
   if (whoseTurn === 1) {
     whoseTurn = 0;
   } else {
@@ -33,77 +52,77 @@ const turnSwitch = function(){
 };
 //switches between turns
 
-const isVacantCell = function(cell){
+const isVacantCell = function (cell) {
   return board[cell] === null;
 };
 //checks if cell is vacant
 
-const horizontalWin = function(){
-    if(board[0] !== null && board[0] === board[1] && board[0] === board[2]){
+const horizontalWin = function () {
+    if (board[0] !== null && board[0] === board[1] && board[0] === board[2]) {
       winner = board[0];
-    } else if (board[3] !== null && board[3] === board[4] && board[3] === board[5]){
+    } else if (board[3] !== null && board[3] === board[4] && board[3] === board[5]) {
       winner = board[3];
-    } else if (board[6] !== null && board[6] === board[7] && board[6] === board[8]){
+    } else if (board[6] !== null && board[6] === board[7] && board[6] === board[8]) {
       winner = board[6];
     }
-  return winner;
-};
+
+    return winner;
+  };
 //checks for horizontal set up for possible win
 
-
-const verticalWin = function(){
-    if(board[0] !== null && board[0] === board[3] && board[0] === board[6]){
+const verticalWin = function () {
+    if (board[0] !== null && board[0] === board[3] && board[0] === board[6]) {
       winner = board[0];
-    } else if (board[1] !== null && board[1] === board[4] && board[1] === board[7]){
+    } else if (board[1] !== null && board[1] === board[4] && board[1] === board[7]) {
       winner = board[1];
-    } else if (board[2] !== null && board[2] === board[5] && board[2] === board[8]){
+    } else if (board[2] !== null && board[2] === board[5] && board[2] === board[8]) {
       winner = board[2];
     }
-  return winner;
-};
+
+    return winner;
+  };
 //checks for vertical setup for possible win
 
-const diagonalWin = function(){
-  if (board[4] !== null){
-    if (board[4] === board[0] && board[4] === board[8] || board[4] === board[2] && board[4] === board[6]){
+const diagonalWin = function () {
+  if (board[4] !== null) {
+    if (board[4] === board[0] && board[4] === board[8] || board[4] === board[2] && board[4] === board[6]) {
       winner = board[4];
     }
   }
+
   return winner;
 };
 //checks for diagonal setup for possible win
 
-const winCheck = function(){
+const winCheck = function () {
   return horizontalWin() || verticalWin() || diagonalWin();
 };
 //checks for a win condition
 
-const tieCheck = function(){
+const tieCheck = function () {
   return ($('.occupied').length === 9);
 };
 //checks for a tie condition
 
-const scoreCounter = function(){
+const scoreCounter = function () {
   let winScore;
-  if(winner === 'x'){
+  if (winner === 'x') {
     winScore = xScore++;
   } else {
     winScore = oScore++;
   }
+
   return winScore;
 };
 //keeps track of wins
 
-const restartGameData = function(){
-  board.splice(0,board.length);
+const restartGameData = function () {
+  board.splice(0, board.length);
   initializeBoard(board);
   whoseTurn = 0;
   winner = null;
 };
 //restarts game data
-
-
-
 
 module.exports = {
   board,
@@ -121,5 +140,5 @@ module.exports = {
   winCheck,
   tieCheck,
   scoreCounter,
-  restartGameData
+  restartGameData,
 };
