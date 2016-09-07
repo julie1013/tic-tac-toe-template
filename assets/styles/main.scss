@@ -1,0 +1,50 @@
+$black: #000;
+
+.board {
+  border: 1px solid $black;
+  // -moz-box-sizing: border-box;
+  // -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 300px;
+  margin: 0 auto;
+  margin-top: 150px;
+  width: 300px;
+
+}
+
+.square {
+  border: 1px solid $black;
+  // -moz-box-sizing: border-box;
+  // -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  height: 99px;
+  width: 99px;
+}
+
+.create-account,
+.sign-in {
+  float: right;
+};
+
+.score-board {
+  border: 1px solid $black;
+  float: left;
+  height: 300px;
+  width: 300px;
+};
+
+.x-score,
+.o-score {
+  border: 1px solid $black;
+  // -moz-box-sizing: border-box;
+  // -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 300px;
+  width: 150px;
+};
+
+.x-score {
+  float: left;
+  clear: both;
+}
