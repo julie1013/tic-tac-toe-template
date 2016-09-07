@@ -18,12 +18,6 @@ const setCell = function (cell, player) {
 };
 //visually updates cell with player token
 
-const restartGameUi = function () {
-  $('.board').empty();
-  drawBoard(logic.currentGame.game.cells);
-  events.setUpHandlers();
-};
-//restarts game UI
 
 const play = function (cell) {
     logic.player = logic.isPlayerTurn();
@@ -34,7 +28,7 @@ const play = function (cell) {
       logic.scoreCounter(logic.player);
       setTimeout(function () {
         logic.restartGameData();
-        restartGameUi();
+        $('.board div').children().remove();
       }, 3000);
     } else {
       logic.turnSwitch();
@@ -46,6 +40,5 @@ const play = function (cell) {
 module.exports = {
   drawBoard,
   setCell,
-  restartGameUi,
   play,
 };
