@@ -9,6 +9,7 @@ let oScore = 0;
 const initializeBoard = function(){
   for (let i = 0; i < 9; i++){
     board.push(null);
+    console.log(board);
   }
 };
 //sets up an array for the board
@@ -94,7 +95,7 @@ const scoreCounter = function(){
 //keeps track of wins
 
 const restartGameData = function(){
-  board = [];
+  board.splice(0,board.length);
   initializeBoard(board);
   whoseTurn = 0;
   winner = null;

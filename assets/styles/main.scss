@@ -1,5 +1,14 @@
 $black: #000;
 
+.clearfix::after {
+  clear: both;
+  content: ' ';
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+  }
+
 .board {
   border: 1px solid $black;
   // -moz-box-sizing: border-box;

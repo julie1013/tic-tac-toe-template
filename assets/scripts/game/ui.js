@@ -2,6 +2,7 @@
 'use strict';
 
 const logic = require('./logic');
+const events = require('./events');
 
 const drawBoard = function(array){
   for(let i = 0; i < array.length; i++){
@@ -21,7 +22,7 @@ const setCell = function(cell, player){
 const restartGameUi = function(){
   $('.board').empty();
   drawBoard(logic.board);
-  logic.setUpHandlers();
+  events.setUpHandlers();
 };
 //restarts game UI
 
