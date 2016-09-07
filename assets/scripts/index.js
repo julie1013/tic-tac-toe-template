@@ -7,5 +7,6 @@ const ui = require('./game/ui');
 $(document).ready(function(){
   logic.initializeBoard();
   ui.drawBoard(logic.board);
+  console.log("events is", events);
   events.setUpHandlers();
 });
