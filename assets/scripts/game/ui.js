@@ -14,13 +14,13 @@ const drawBoard = function (array) {
 
 const setCell = function (cell, player) {
   $('#' + cell).html('<img src = ../../assets/images/' + player + '.png style="width: 90px">').removeClass('unoccupied').removeClass('selected').addClass('occupied').off();
-  logic.board[cell] = player;
+  logic.currentGame.game.cells[cell] = player;
 };
 //visually updates cell with player token
 
 const restartGameUi = function () {
   $('.board').empty();
-  drawBoard(logic.board);
+  drawBoard(logic.currentGame.game.cells);
   events.setUpHandlers();
 };
 //restarts game UI
@@ -29,6 +29,7 @@ const play = function (cell) {
     logic.player = logic.isPlayerTurn();
     setCell(cell, logic.player);
     if (logic.winCheck() || logic.tieCheck()) {
+      logic.currentGame.over = true;
       $('.board').children().off();
       logic.scoreCounter(logic.player);
       setTimeout(function () {

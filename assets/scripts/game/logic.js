@@ -34,9 +34,9 @@ const initializeBoard = function () {
 
 const isPlayerTurn = function () {
   if (whoseTurn === 0) {
-    player = 'x';
+    player = 'player_x';
   } else {
-    player = 'o';
+    player = 'player_o';
   }
 
   return player;
@@ -53,7 +53,7 @@ const turnSwitch = function () {
 //switches between turns
 
 const isVacantCell = function (cell) {
-  return board[cell] === null;
+  return currentGame.game.cells[cell] === "";
 };
 //checks if cell is vacant
 
@@ -106,7 +106,7 @@ const tieCheck = function () {
 
 const scoreCounter = function () {
   let winScore;
-  if (winner === 'x') {
+  if (winner === 'player_x') {
     winScore = xScore++;
   } else {
     winScore = oScore++;
@@ -117,7 +117,7 @@ const scoreCounter = function () {
 //keeps track of wins
 
 const restartGameData = function () {
-  board.splice(0, board.length);
+  currentGame.game.cells.splice(0, board.length);
   initializeBoard(board);
   whoseTurn = 0;
   winner = null;
@@ -125,6 +125,7 @@ const restartGameData = function () {
 //restarts game data
 
 module.exports = {
+  currentGame,
   board,
   player,
   whoseTurn,
