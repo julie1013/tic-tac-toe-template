@@ -144,7 +144,6 @@ const scoreCounter = function () {
 //keeps track of wins
 
 const restartGameData = function () {
-  currentGame.game.cells.splice(0, currentGame.game.cells.length);
   currentGame.game.over = false;
   initializeBoard(currentGame.game.cells);
   whoseTurn = 0;

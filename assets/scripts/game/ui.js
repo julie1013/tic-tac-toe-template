@@ -6,7 +6,7 @@ const logic = require('./logic');
 const drawBoard = function (array) {
   for (let i = 0; i < array.length; i++) {
     $('.board').append('<div id =' + i + '></div>');
-    $('.board div').addClass('square').addClass('unoccupied');
+    $('.board div').addClass('square');
   }
 };
 //sets up the board visually
