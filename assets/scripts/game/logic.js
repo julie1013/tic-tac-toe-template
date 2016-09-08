@@ -56,40 +56,57 @@ const isVacantCell = function (cell) {
 //checks if cell is vacant
 
 const horizontalWin = function () {
-    if (currentGame.game.cells[0] !== null && currentGame.game.cells[0] === currentGame.game.cells[1] && currentGame.game.cells[0] === currentGame.game.cells[2]) {
+    if (currentGame.game.cells[0] !== "" &&
+        currentGame.game.cells[0] === currentGame.game.cells[1] &&
+        currentGame.game.cells[0] === currentGame.game.cells[2]) {
       winner = currentGame.game.cells[0];
-    } else if (currentGame.game.cells[3] !== null && currentGame.game.cells[3] === currentGame.game.cells[4] && currentGame.game.cells[3] === currentGame.game.cells[5]) {
+      console.log(winner, "horizontal win");
+    } else if (currentGame.game.cells[3] !== "" &&
+              currentGame.game.cells[3] === currentGame.game.cells[4] &&
+              currentGame.game.cells[3] === currentGame.game.cells[5]) {
       winner = currentGame.game.cells[3];
-    } else if (currentGame.game.cells[6] !== null && currentGame.game.cells[6] === currentGame.game.cells[7] && currentGame.game.cells[6] === currentGame.game.cells[8]) {
+      console.log(winner, "horizontal win");
+    } else if (currentGame.game.cells[6] !== "" &&
+              currentGame.game.cells[6] === currentGame.game.cells[7] &&
+              currentGame.game.cells[6] === currentGame.game.cells[8]) {
       winner = currentGame.game.cells[6];
+      console.log(winner, "horizontal win");
     }
-    console.log(winner);
     return winner;
   };
 //checks for horizontal set up for possible win
 
 const verticalWin = function () {
-    if (currentGame.game.cells[0] !== null && currentGame.game.cells[0] === currentGame.game.cells[3] && currentGame.game.cells[0] === currentGame.game.cells[6]) {
+    if (currentGame.game.cells[0] !== "" &&
+        currentGame.game.cells[0] === currentGame.game.cells[3] &&
+        currentGame.game.cells[0] === currentGame.game.cells[6]) {
       winner = currentGame.game.cells[0];
-    } else if (currentGame.game.cells[1] !== null && currentGame.game.cells[1] === currentGame.game.cells[4] && currentGame.game.cells[1] === currentGame.game.cells[7]) {
+      console.log(winner, "vertical win");
+    } else if (currentGame.game.cells[1] !== "" &&
+      currentGame.game.cells[1] === currentGame.game.cells[4] &&
+      currentGame.game.cells[1] === currentGame.game.cells[7]) {
       winner = currentGame.game.cells[1];
-    } else if (currentGame.game.cells[2] !== null && currentGame.game.cells[2] === currentGame.game.cells[5] && currentGame.game.cells[2] === currentGame.game.cells[8]) {
+      console.log(winner, "vertical win");
+    } else if (currentGame.game.cells[2] !== "" &&
+              currentGame.game.cells[2] === currentGame.game.cells[5] &&
+              currentGame.game.cells[2] === currentGame.game.cells[8]) {
       winner = currentGame.game.cells[2];
-      console.log(winner);
+      console.log(winner, "vertical win");
     }
-
     return winner;
   };
 //checks for vertical setup for possible win
 
 const diagonalWin = function () {
-  if (currentGame.game.cells[4] !== null) {
-    if (currentGame.game.cells[4] === currentGame.game.cells[0] && currentGame.game.cells[4] === currentGame.game.cells[8] || currentGame.game.cells[4] === currentGame.game.cells[2] && currentGame.game.cells[4] === currentGame.game.cells[6]) {
+  if (currentGame.game.cells[4] !== "") {
+    if (currentGame.game.cells[4] === currentGame.game.cells[0] &&
+      currentGame.game.cells[4] === currentGame.game.cells[8] ||
+      currentGame.game.cells[4] === currentGame.game.cells[2] &&
+      currentGame.game.cells[4] === currentGame.game.cells[6]) {
       winner = currentGame.game.cells[4];
-      console.log(winner);
+      console.log(winner, "diagonal win");
     }
   }
-
   return winner;
 };
 //checks for diagonal setup for possible win

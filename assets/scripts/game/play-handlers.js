@@ -21,7 +21,6 @@ const play = function (cell) {
         $('.board div').children().remove();
         setUpHandlers();
       }, 3000);
-      console.log(logic.winner);
     } else {
       logic.turnSwitch();
     }
