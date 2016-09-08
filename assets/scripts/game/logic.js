@@ -82,12 +82,12 @@ const verticalWin = function () {
         currentGame.game.cells[0] === currentGame.game.cells[6]) {
       winner = currentGame.game.cells[0];
       console.log(winner, "vertical win");
-    } else if (!currentGame.game.cells[1] &&
+    } else if (currentGame.game.cells[1] &&
       currentGame.game.cells[1] === currentGame.game.cells[4] &&
       currentGame.game.cells[1] === currentGame.game.cells[7]) {
       winner = currentGame.game.cells[1];
       console.log(winner, "vertical win");
-    } else if (!currentGame.game.cells[2] &&
+    } else if (currentGame.game.cells[2] &&
               currentGame.game.cells[2] === currentGame.game.cells[5] &&
               currentGame.game.cells[2] === currentGame.game.cells[8]) {
       winner = currentGame.game.cells[2];
