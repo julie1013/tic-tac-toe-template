@@ -1,5 +1,29 @@
 $black: #000;
 
+header {
+  text-align: center;
+}
+
+button {
+  clear: both;
+  float: left;
+}
+
+form {
+  clear: both;
+  float: left;
+}
+
+.tt {
+  font-family: 'Courgette', cursive;
+  font-size: 60px;
+}
+
+.cat {
+  font-family: 'Chewy', cursive;
+  font-size: 70px;
+}
+
 .clearfix::after {
   clear: both;
   content: ' ';
@@ -9,16 +33,28 @@ $black: #000;
   visibility: hidden;
   }
 
+.score-board {
+  border: 1px solid $black;
+  box-sizing: border-box;
+  clear: both;
+  float: left;
+  height: 300px;
+  margin: 0 auto;
+  width: 300px;
+}
+
 .board {
   border: 1px solid $black;
   // -moz-box-sizing: border-box;
   // -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  float: left;
   height: 500px;
   margin: 0 auto;
-  margin-top: 150px;
+  margin-bottom: 50px;
+  margin-left: 150px;
+  margin-top: 25px;
   width: 500px;
-
 }
 
 .square {
@@ -36,24 +72,14 @@ $black: #000;
   float: right;
 };
 
-.score-board {
-  border: 1px solid $black;
-  float: left;
-  height: 300px;
-  width: 300px;
-};
-
 .x-score,
 .o-score {
   border: 1px solid $black;
   // -moz-box-sizing: border-box;
   // -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  height: 300px;
-  width: 150px;
+  height: 299px;
+  width: 149px;
+  // float: left;
+  // clear: both;
 };
-
-.x-score {
-  float: left;
-  clear: both;
-}

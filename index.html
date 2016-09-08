@@ -5,16 +5,17 @@
     <title>Tic CAT Toe</title>
     <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
     <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chewy|Courgette" rel="stylesheet">
   </head>
   <body>
-    <header>Tic CAT Toe</header>
-    <div class="score-board">
-      <div class="x-score"></div>
-      <div class="o-score"></div>
+    <header><span class="tt">Tic-</span><span class="cat">CAT-</span><span class="tt">Toe</span></header>
+    <div class="score-board clearfix">
+      <div class="x-score clearfix">X-Score</div>
+      <div class="o-score clearfix">O-Score</div>
    </div>
-   <button class="new-game">New Game</button>
     <div class="board clearfix"></div>
-    <h5>Create an account:</h5>
+    <button class="new-game">New Game</button>
     <form action="#" id="account-create">
       <input type="text" name="currentGame.game.player_x[email]" placeholder="Email">
       <input type="password" name="currentGame.game.player_x[password]" placeholder="Password">
@@ -26,7 +27,5 @@
       <input type="password" name="currentGame.game.player_x[password]" placeholder="Password">
       <input type="Submit" value="Sign In">
     </form>
-
-    <!-- <button class="sign in">Sign In</button> -->
   </body>
 </html>
