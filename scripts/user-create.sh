@@ -8,14 +8,14 @@
 #     }
 #   }'
 
-curl "http://tic-tac-toe.wdibos.com/" \
+curl "http://tic-tac-toe.wdibos.com/sign-up" \
 --include \
 --request POST \
 --header "Content-Type: application/json" \
---data $"{
- \"credentials\": {
-   \"email\": \"email@example.com\",
-   \"password\": \"lalala\",
-   \"password_confirmation\": \"lalala\"
- }
-}"
+--data '{
+  "credentials": {
+    "email": "catfail@catfailsforeverandever.org",
+    "password": "blablabla",
+    "password_confirmation": "blablabla"
+  }
+}'

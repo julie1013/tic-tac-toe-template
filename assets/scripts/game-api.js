@@ -1,3 +1,16 @@
 'use strict';
 
-const getFormFields = require('../../lib/get-form-fields');
+const app = require('./game/app');
+
+const signUp = function (data) {
+  return $.ajax({
+    url: app.appSite.host + '/sign-up',
+    method: 'POST',
+    data: data,
+  });
+};
+
+
+module.exports = {
+  signUp,
+};

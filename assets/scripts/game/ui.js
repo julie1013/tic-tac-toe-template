@@ -17,7 +17,21 @@ const setCell = function (cell, player) {
 };
 //visually updates cell with player token
 
+const onSignUpSuccess = function (data) {
+  if (data) {
+    console.log(data);
+  } else {
+    console.log("Didn't work");
+  }
+};
+
+const onError = function (response) {
+  console.error(response);
+};
+
 module.exports = {
   drawBoard,
   setCell,
+  onSignUpSuccess,
+  onError,
 };

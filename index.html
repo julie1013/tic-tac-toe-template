@@ -14,19 +14,30 @@
    </div>
    <button class="new-game">New Game</button>
     <div class="board clearfix"></div>
-    <h5>Create an account:</h5>
-    <form action="#" id="account-create">
-      <input type="text" name="currentGame.game.player_x[email]" placeholder="Email">
-      <input type="password" name="currentGame.game.player_x[password]" placeholder="Password">
-      <input type="text" name="currentGame.game.player_x[confirm-password]" placeholder="Confirm Password">
-      <input type="Submit" value="Create Account">
-    </form>
-    <form action="#" id="log-in">
-      <input type="text" name="currentGame.game.player_x[email]" placeholder="Email">
-      <input type="password" name="currentGame.game.player_x[password]" placeholder="Password">
-      <input type="Submit" value="Sign In">
-    </form>
+  <h5>Create an account:</h5>
+  <form id="sign-up">
+    <input name="credentials[email]" type="text" placeholder="email" value="">
+    <input name="credentials[password]" type="password" placeholder="password"
+      value="">
+    <input name="credentials[password_confirmation]" type="password" placeholder="confirm password"
+      value="">
+    <input type="Submit" value="Sign Up">
+  </form>
+  <h5>Log In</h5>
+  <form id="sign-in">
+    <input name="credentials[email]" type="text" placeholder="email" value="">
+    <input name="credentials[password]" type="password" placeholder="password"
+      value="">
+    <input type="Submit" value="Sign In">
+  </form>
+  <h5>Change Password:</h5>
+  <form id="change-password">
+    <input name="credentials[email]" type="text" placeholder="email" value="">
+    <input name="credentials[old-password]" type="password"
+      placeholder="old password">
+    <input name="credentials[new-password]" placeholder="new password" value="">
+    <input type="Submit" value="Change password">
+  </form>
 
-    <!-- <button class="sign in">Sign In</button> -->
   </body>
 </html>
