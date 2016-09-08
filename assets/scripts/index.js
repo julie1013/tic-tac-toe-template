@@ -6,6 +6,6 @@ const ui = require('./game/ui');
 
 $(document).ready(function () {
   logic.initializeBoard();
-  ui.drawBoard(logic.board);
+  ui.drawBoard(logic.currentGame.game.cells);
   playHandlers.setUpHandlers();
 });

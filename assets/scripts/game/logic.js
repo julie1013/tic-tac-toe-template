@@ -1,6 +1,5 @@
 'use strict';
 let player;
-let board = [];
 let whoseTurn = 0;
 let winner;
 let xScore = 0;
@@ -23,8 +22,7 @@ let currentGame = {
 };
 
 const initializeBoard = function () {
-  currentGame.game.cells = board;
-  console.log("currentGame is", currentGame);
+  currentGame.game.cells = [];
   for (let i = 0; i < 9; i++) {
     currentGame.game.cells.push("");
   }
@@ -130,7 +128,6 @@ const restartGameData = function () {
 
 module.exports = {
   currentGame,
-  board,
   player,
   whoseTurn,
   xScore,
