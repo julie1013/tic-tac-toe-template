@@ -8,18 +8,20 @@ const play = function (cell) {
     ui.setCell(cell, logic.player);
 
     // log
-    console.log("logic.currentGame.game.cells array is");
+    console.log("array is ", logic.currentGame.game.cells );
     console.log(logic.currentGame.game.cells);
     if (logic.winCheck() || logic.tieCheck()) {
       $('.board').children().off();
       logic.currentGame.game.over = true;
-      logic.scoreCounter(logic.player);
+      logic.scoreCounter();
       setTimeout(function () {
+        console.log(logic.currentGame.game.cells);
         logic.restartGameData();
-        console.log(logic.currentGame);
+        console.log(logic.currentGame.game.cells);
         $('.board div').children().remove();
         setUpHandlers();
       }, 3000);
+      console.log(logic.winner);
     } else {
       logic.turnSwitch();
     }

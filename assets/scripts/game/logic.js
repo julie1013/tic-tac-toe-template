@@ -65,7 +65,7 @@ const horizontalWin = function () {
     } else if (currentGame.game.cells[6] !== null && currentGame.game.cells[6] === currentGame.game.cells[7] && currentGame.game.cells[6] === currentGame.game.cells[8]) {
       winner = currentGame.game.cells[6];
     }
-
+    console.log(winner);
     return winner;
   };
 //checks for horizontal set up for possible win
@@ -77,6 +77,7 @@ const verticalWin = function () {
       winner = currentGame.game.cells[1];
     } else if (currentGame.game.cells[2] !== null && currentGame.game.cells[2] === currentGame.game.cells[5] && currentGame.game.cells[2] === currentGame.game.cells[8]) {
       winner = currentGame.game.cells[2];
+      console.log(winner);
     }
 
     return winner;
@@ -87,6 +88,7 @@ const diagonalWin = function () {
   if (currentGame.game.cells[4] !== null) {
     if (currentGame.game.cells[4] === currentGame.game.cells[0] && currentGame.game.cells[4] === currentGame.game.cells[8] || currentGame.game.cells[4] === currentGame.game.cells[2] && currentGame.game.cells[4] === currentGame.game.cells[6]) {
       winner = currentGame.game.cells[4];
+      console.log(winner);
     }
   }
 
@@ -105,14 +107,15 @@ const tieCheck = function () {
 //checks for a tie condition
 
 const scoreCounter = function () {
-  let winScore;
   if (winner === 'x') {
-    winScore = xScore++;
+    xScore++;
+    console.log("x has", xScore + " points");
+    return xScore;
   } else {
-    winScore = oScore++;
+    oScore++;
+    console.log("o has", oScore + " points");
+    return oScore;
   }
-
-  return winScore;
 };
 //keeps track of wins
 
