@@ -25,9 +25,8 @@ const onSignIn = function (event) {
 
 const onSignOut = function(event){
   event.preventDefault();
-  let data = getFormFields(event.target);
-    api.signOut(data)
-    .done(ui.signOutSuccess)
+    api.signOut()
+    .done(ui.onSignOutSuccess)
     .fail(ui.onError);
 };
 

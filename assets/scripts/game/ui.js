@@ -2,6 +2,7 @@
 'use strict';
 
 const logic = require('./logic');
+const app = require('./app');
 
 const drawBoard = function (array) {
   for (let i = 0; i < array.length; i++) {
@@ -28,11 +29,13 @@ const onSignUpSuccess = function (data) {
 };
 
 const onSignInSuccess = function (data) {
-  if (data){
-    console.log(data, "You are signed in!");
-  } else {
-    console.log("Nope!");
-  }
+    app.user = data.user;
+    console.log("You are now signed in", data);
+};
+
+const onSignOutSuccess = function(){
+  console.log("You are now signed out!");
+  app.user = null;
 };
 
 const onError = function (response) {
@@ -44,5 +47,6 @@ module.exports = {
   setCell,
   onSignUpSuccess,
   onSignInSuccess,
+  onSignOutSuccess,
   onError,
 };

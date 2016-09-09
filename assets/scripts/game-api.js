@@ -18,16 +18,14 @@ const signIn = function(data) {
   });
 };
 
-const signOut = function(data) {
+const signOut = function() {
   let id = app.user.id;
-  let token = app.user.token;
   return  $.ajax({
     url: app.host + '/sign-out/' + id,
     method: "DELETE",
     headers: {
-      Authorization: 'Token token=' + token
+      Authorization: 'Token token=' + app.user.token,
     },
-    data: data,
   });
 };
 
