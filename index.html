@@ -16,16 +16,22 @@
    </div>
     <div class="board clearfix"></div>
     <button class="new-game">New Game</button>
-    <form action="#" id="account-create">
-      <input type="text" name="currentGame.game.player_x[email]" placeholder="Email">
-      <input type="password" name="currentGame.game.player_x[password]" placeholder="Password">
-      <input type="text" name="currentGame.game.player_x[confirm-password]" placeholder="Confirm Password">
-      <input type="Submit" value="Create Account">
+    <form id="sign-up">
+      <input name="credentials[email]" type="text" placeholder= "email">
+      <input name="credentials[password]" type="password" placeholder="password">
+      <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
+      <input type="Submit" value="Sign Up">
     </form>
-    <form action="#" id="log-in">
-      <input type="text" name="currentGame.game.player_x[email]" placeholder="Email">
-      <input type="password" name="currentGame.game.player_x[password]" placeholder="Password">
+    <form id="sign-in">
+      <input name="credentials[email]" type="text" placeholder= "email">
+      <input name="credentials[password]" type="password" placeholder="password">
       <input type="Submit" value="Sign In">
+    </form>
+    <form id="change-password">
+      <input name="credentials[email]" type="text" placeholder= "email">
+      <input name="credentials[password-old]" type="password" placeholder="old password">
+      <input name="credentials[password-new]" type="password" placeholder="new password">
+      <input type="Submit" value="Change password">
     </form>
   </body>
 </html>
