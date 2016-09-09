@@ -54,6 +54,10 @@ const onGetGamesSuccess = function(data){
   console.log(data);
 };
 
+const onShowGameSuccess = function(data){
+  console.log(data);
+};
+
 module.exports = {
   drawBoard,
   setCell,
@@ -63,5 +67,6 @@ module.exports = {
   onChangePasswordSuccess,
   onNewGameSuccess,
   onGetGamesSuccess,
+  onShowGameSuccess,
   onError,
 };

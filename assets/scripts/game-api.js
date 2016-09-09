@@ -62,10 +62,9 @@ const newGame = function () {
 };
 
 const showGame = function () {
-  let data = getFormFields();
-  let id = app.user.id;
+  let gameID = $('#gameID').val();
   return $.ajax({
-    url: app.host + '/games/' + id,
+    url: app.host + '/games/' + gameID,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token,
