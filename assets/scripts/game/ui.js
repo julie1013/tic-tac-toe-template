@@ -27,6 +27,14 @@ const onSignUpSuccess = function (data) {
   }
 };
 
+const onSignInSuccess = function (data) {
+  if (data){
+    console.log(data);
+  } else {
+    console.log("Nope!");
+  }
+};
+
 const onError = function (response) {
   console.error(response);
 };
@@ -35,5 +43,6 @@ module.exports = {
   drawBoard,
   setCell,
   onSignUpSuccess,
+  onSignInSuccess,
   onError,
 };

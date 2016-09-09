@@ -10,7 +10,16 @@ const signUp = function (data) {
   });
 };
 
+const signIn = function(data) {
+  return  $.ajax({
+    url: app.appSite.host + '/sign-in',
+    method: "POST",
+    data: data,
+  });
+};
+
 
 module.exports = {
   signUp,
+  signIn,
 };

@@ -15,6 +15,15 @@ const onSignUp = function(event) {
     .fail(ui.onError);
 };
 
+const onSignIn = function (event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.signIn(data)
+    .done(ui.onSignInSuccess)
+    .fail(ui.onErro);
+};
+
 module.exports = {
   onSignUp,
+  onSignIn,
 };
