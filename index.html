@@ -15,23 +15,28 @@
       <div class="o-score clearfix">O-Score</div>
    </div>
     <div class="board clearfix"></div>
-    <button class="new-game">New Game</button>
-    <form id="sign-up">
-      <input name="credentials[email]" type="text" placeholder= "email">
-      <input name="credentials[password]" type="password" placeholder="password">
-      <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
-      <input type="Submit" value="Sign Up">
-    </form>
-    <form id="sign-in">
-      <input name="credentials[email]" type="text" placeholder= "email">
-      <input name="credentials[password]" type="password" placeholder="password">
-      <input type="Submit" value="Sign In">
-    </form>
-    <form id="change-password">
-      <input name="credentials[email]" type="text" placeholder= "email">
-      <input name="credentials[password-old]" type="password" placeholder="old password">
-      <input name="credentials[password-new]" type="password" placeholder="new password">
-      <input type="Submit" value="Change password">
-    </form>
+  <form id="sign-up">
+    <input name="credentials[email]" type="text" placeholder="email" value="">
+    <input name="credentials[password]" type="password" placeholder="password"
+      value="">
+    <input name="credentials[password_confirmation]" type="password" placeholder="confirm password"
+      value="">
+    <input type="Submit" value="Sign Up">
+  </form>
+  <h5>Log In</h5>
+  <form id="sign-in">
+    <input name="credentials[email]" type="text" placeholder="email" value="">
+    <input name="credentials[password]" type="password" placeholder="password"
+      value="">
+    <input type="Submit" value="Sign In">
+  </form>
+  <h5>Change Password:</h5>
+  <form id="change-password">
+    <input name="credentials[email]" type="text" placeholder="email" value="">
+    <input name="credentials[old-password]" type="password"
+      placeholder="old password">
+    <input name="credentials[new-password]" placeholder="new password" value="">
+    <input type="Submit" value="Change password">
+  </form>
   </body>
 </html>
