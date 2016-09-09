@@ -30,8 +30,26 @@ const onSignOut = function(event){
     .fail(ui.onError);
 };
 
+const onChangePassword = function (event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.changePassword(data)
+    .done(ui.onChangePasswordSuccess)
+    .fail(ui.onError);
+};
+
+const onGetGames = function (event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.index(data)
+    .done(ui.onGetGamesSuccess)
+    .fail(ui.onError);
+};
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
+  onChangePassword,
+  onGetGames,
 };

@@ -38,8 +38,16 @@ const onSignOutSuccess = function(){
   app.user = null;
 };
 
+const onChangePasswordSuccess = function(){
+  console.log("Password successfully changed.");
+};
+
 const onError = function (response) {
   console.error(response);
+};
+
+const onGetGamesSuccess = function(data){
+  console.log(data);
 };
 
 module.exports = {
@@ -48,5 +56,7 @@ module.exports = {
   onSignUpSuccess,
   onSignInSuccess,
   onSignOutSuccess,
+  onChangePasswordSuccess,
+  onGetGamesSuccess,
   onError,
 };

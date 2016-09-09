@@ -11,6 +11,7 @@ $(document).ready(function () {
   playHandlers.setUpHandlers();
   $('#sign-up').on('submit', events.onSignUp);
   $('#sign-in').on('submit', events.onSignIn);
-  $('#change-password').on('submit', events.onChangePassword);
   $('#sign-out').on('submit', events.onSignOut);
+  $('#change-password').on('submit', events.onChangePassword);
+  $('#get-games').on('submit', events.onGetGames);
 });
