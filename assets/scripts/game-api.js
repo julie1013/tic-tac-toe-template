@@ -61,6 +61,18 @@ const newGame = function () {
   });
 };
 
+const showGame = function () {
+  let data = getFormFields();
+  let id = app.user.id;
+  return $.ajax({
+    url: app.host + '/games/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
+
 
 module.exports = {
   signUp,
@@ -69,4 +81,5 @@ module.exports = {
   changePassword,
   newGame,
   index,
+  showGame,
 };

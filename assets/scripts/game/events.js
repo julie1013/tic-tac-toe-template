@@ -54,6 +54,16 @@ const onGetGames = function (event) {
     .fail(ui.onError);
 };
 
+const onShowGame = function (event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.showGame(data)
+    .done(ui.onShowGameSuccess)
+    .fail(ui.onError);
+};
+
+
+
 
 module.exports = {
   onSignUp,
@@ -62,4 +72,5 @@ module.exports = {
   onChangePassword,
   onNewGame,
   onGetGames,
+  onShowGame,
 };

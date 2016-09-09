@@ -30,10 +30,9 @@
     <input type="Submit" value="Sign In!">
   </form>
   <form id="change-password">
-    <input name="credentials[email]" type="text" placeholder="email" value="">
-    <input name="credentials[old-password]" type="password"
-      placeholder="old password">
-    <input name="credentials[new-password]" type="password" placeholder="new password" value="">
+    <input name="passwords[old]" type="password"
+      placeholder="old password" value="">
+    <input name="passwords[new]" type="password" placeholder="new password" value="">
     <input type="Submit" value="Change password">
   </form>
   <form id="sign-out">
@@ -44,6 +43,10 @@
   </form>
   <form id="new-game">
     <input type="submit" value="New Game!">
+  </form>
+  <form id="show-game">
+    <input name="id" type="text" placeholder="id" value="">
+    <input type="Submit" value="Show Game!">
   </form>
   </body>
 </html>
