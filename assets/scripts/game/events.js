@@ -63,8 +63,6 @@ const onShowGame = function (event) {
 };
 
 
-
-
 module.exports = {
   onSignUp,
   onSignIn,

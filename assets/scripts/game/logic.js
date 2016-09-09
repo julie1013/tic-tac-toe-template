@@ -55,6 +55,12 @@ const isVacantCell = function (cell) {
 };
 //checks if cell is vacant
 
+const setCellData = function(cell, player){
+  currentGame.game.cells[cell] = player;
+  console.log(player);
+  return player;
+};
+
 const horizontalWin = function () {
     if (currentGame.game.cells[0]  &&
         currentGame.game.cells[0] === currentGame.game.cells[1] &&
@@ -168,4 +174,5 @@ module.exports = {
   tieCheck,
   scoreCounter,
   restartGameData,
+  setCellData,
 };
