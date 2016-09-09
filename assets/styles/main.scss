@@ -38,8 +38,13 @@ form {
   box-sizing: border-box;
   clear: both;
   float: left;
+  font-family: 'Courgette', cursive;
+  font-size: 25px;
   height: 300px;
-  margin: 0 auto;
+  margin-left: 50px;
+  margin-right: -50px;
+  margin-top: 25px;
+  text-align: center;
   width: 300px;
 }
 
@@ -78,8 +83,7 @@ form {
   // -moz-box-sizing: border-box;
   // -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  float: left;
   height: 299px;
   width: 149px;
-  // float: left;
-  // clear: both;
 };
