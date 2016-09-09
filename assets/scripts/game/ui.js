@@ -21,7 +21,7 @@ const setCell = function (cell, player) {
 
 const onSignUpSuccess = function (data) {
   if (data) {
-    console.log(data);
+    console.log(data, "You are signed up!");
   } else {
     console.log("Didn't work");
   }
@@ -29,7 +29,7 @@ const onSignUpSuccess = function (data) {
 
 const onSignInSuccess = function (data) {
   if (data){
-    console.log(data);
+    console.log(data, "You are signed in!");
   } else {
     console.log("Nope!");
   }

@@ -20,10 +20,19 @@ const onSignIn = function (event) {
   let data = getFormFields(event.target);
   api.signIn(data)
     .done(ui.onSignInSuccess)
-    .fail(ui.onErro);
+    .fail(ui.onError);
+};
+
+const onSignOut = function(event){
+  event.preventDefault();
+  let data = getFormFields(event.target);
+    api.signOut(data)
+    .done(ui.signOutSuccess)
+    .fail(ui.onError);
 };
 
 module.exports = {
   onSignUp,
   onSignIn,
+  onSignOut,
 };

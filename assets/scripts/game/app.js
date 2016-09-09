@@ -1,9 +1,7 @@
 'use strict';
 
-const appSite = {
+const app = {
   host: 'http://tic-tac-toe.wdibos.com',
 };
 
-module.exports = {
-  appSite,
-};
+module.exports = app;
