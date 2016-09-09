@@ -46,6 +46,10 @@ const onError = function (response) {
   console.error(response);
 };
 
+const onNewGameSuccess = function(data){
+  console.log(data);
+};
+
 const onGetGamesSuccess = function(data){
   console.log(data);
 };
@@ -57,6 +61,7 @@ module.exports = {
   onSignInSuccess,
   onSignOutSuccess,
   onChangePasswordSuccess,
+  onNewGameSuccess,
   onGetGamesSuccess,
   onError,
 };

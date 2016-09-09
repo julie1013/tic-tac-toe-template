@@ -14,4 +14,5 @@ $(document).ready(function () {
   $('#sign-out').on('submit', events.onSignOut);
   $('#change-password').on('submit', events.onChangePassword);
   $('#get-games').on('submit', events.onGetGames);
+  $('#new-game').on('submit', events.onNewGame);
 });
