@@ -1,4 +1,5 @@
 'use strict';
+
 let player;
 let whoseTurn = 0;
 let winner;
@@ -57,7 +58,6 @@ const isVacantCell = function (cell) {
 
 const setCellData = function(cell, player){
   currentGame.game.cells[cell] = player;
-  console.log(player);
   return player;
 };
 
@@ -127,7 +127,6 @@ const tieCheck = function () {
   for (let i = 0; i < currentGame.game.cells.length; i++) {
     if (currentGame.game.cells[i] === 'x' || currentGame.game.cells[i] === 'o'){
       count++;
-      console.log(count);
     }
   }
   return count === 9;

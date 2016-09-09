@@ -1,8 +1,8 @@
 
 'use strict';
 
-const logic = require('./logic');
 const app = require('./app');
+const logic = require('./logic');
 
 const drawBoard = function (array) {
   for (let i = 0; i < array.length; i++) {
@@ -59,6 +59,10 @@ const onShowGameSuccess = function(data){
   console.log(data);
 };
 
+const onUpdateBoardSuccess = function(data){
+  console.log(data, "Board is updated on server");
+};
+
 module.exports = {
   drawBoard,
   setCell,
@@ -69,5 +73,6 @@ module.exports = {
   onNewGameSuccess,
   onGetGamesSuccess,
   onShowGameSuccess,
+  onUpdateBoardSuccess,
   onError,
 };

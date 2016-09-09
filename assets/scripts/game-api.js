@@ -1,6 +1,7 @@
 'use strict';
 
 const app = require('./game/app');
+const logic = require('./game/logic');
 
 const signUp = function (data) {
   return $.ajax({
@@ -72,6 +73,18 @@ const showGame = function () {
   });
 };
 
+const updateBoard = function (cell) {
+  let data = logic.currentGame.game.cells[cell];
+  return  $.ajax({
+    url: app.host + data,
+    method: "PATCH",
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: data,
+  });
+};
+
 
 module.exports = {
   signUp,
@@ -81,4 +94,5 @@ module.exports = {
   newGame,
   index,
   showGame,
+  updateBoard,
 };

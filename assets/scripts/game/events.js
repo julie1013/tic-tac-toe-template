@@ -1,11 +1,8 @@
 'use strict';
 
 const getFormFields = require('../../../lib/get-form-fields');
-const playHandlers = require('./play-handlers');
 const api = require('../game-api');
 const ui = require('./ui');
-
-playHandlers.setUpHandlers();
 
 const onSignUp = function(event) {
   event.preventDefault();
@@ -62,6 +59,14 @@ const onShowGame = function (event) {
     .fail(ui.onError);
 };
 
+const onUpdateBoard = function (cell) {
+  console.log("on onUpdateBoard");
+  console.log(cell);
+  api.updateBoard(cell)
+  .done(ui.onUpdateBoardSuccess)
+  .fail(ui.onError);
+};
+
 
 module.exports = {
   onSignUp,
@@ -71,4 +76,5 @@ module.exports = {
   onNewGame,
   onGetGames,
   onShowGame,
+  onUpdateBoard,
 };

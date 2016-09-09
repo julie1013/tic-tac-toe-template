@@ -2,10 +2,12 @@
 
 const logic = require('./logic');
 const ui = require('./ui');
-
+const events = require('./events');
 const play = function (cell) {
     logic.player = logic.isPlayerTurn();
+    logic.setCellData(cell, logic.player);
     ui.setCell(cell, logic.player);
+    events.onUpdateBoard(cell);
     console.log(logic.currentGame.game.cells);
     if (logic.winCheck() || logic.tieCheck()) {
       $('.board').children().off();
