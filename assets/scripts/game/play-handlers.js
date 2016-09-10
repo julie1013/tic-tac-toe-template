@@ -3,6 +3,8 @@
 const logic = require('./logic');
 const ui = require('./ui');
 const events = require('./events');
+const gameOver = require('./game-over');
+
 const play = function (cell) {
     logic.player = logic.isPlayerTurn();
     logic.setCellData(cell, logic.player);
@@ -10,8 +12,8 @@ const play = function (cell) {
     events.onUpdateBoard(cell);
     console.log(logic.currentGame.game.cells);
     if (logic.winCheck() || logic.tieCheck()) {
+      gameOver();
       $('.board').children().off();
-      logic.currentGame.game.over = true;
       logic.scoreCounter();
       setTimeout(function () {
         console.log(logic.currentGame.game.cells);
