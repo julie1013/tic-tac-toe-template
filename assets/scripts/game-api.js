@@ -2,7 +2,6 @@
 
 const app = require('./game/app');
 const logic = require('./game/logic');
-// const watcher = require('./game/watcher.js');
 
 const signUp = function (data) {
   return $.ajax({
@@ -104,40 +103,6 @@ const gamesWon = function () {
     },
   });
 };
-
-// const gameWatcher = watcher.resourceWatcher(app.host + '/games/:id/watch', {
-//       Authorization: 'Token token=' + app.user.token
-// });
-//
-// // gameWatcher.on('change', function (data) {
-// //   console.log(data);
-// //   if (data.game && data.game.cells) {
-// //     const diff = changes => {
-// //       let before = changes[0];
-// //       let after = changes[1];
-// //       for (let i = 0; i < after.length; i++) {
-// //         if (before[i] !== after[i]) {
-// //           return {
-// //             index: i,
-// //             value: after[i],
-// //           };
-// //         }
-// //       }
-// //
-// //       return { index: -1, value: '' };
-// //     };
-// //
-// //     let cell = diff(data.game.cells);
-// //     $('#watch-index').val(cell.index);
-// //     $('#watch-value').val(cell.value);
-// //   } else if (data.timeout) { //not an error
-// //     gameWatcher.close();
-// //   }
-// // });
-// //
-// // gameWatcher.on('error', function (e) {
-// //   console.error('an error has occurred with the stream', e);
-// // });
 
 module.exports = {
   signUp,

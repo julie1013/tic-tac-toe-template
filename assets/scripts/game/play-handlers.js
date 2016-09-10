@@ -18,6 +18,7 @@ const play = function (cell) {
       setTimeout(function () {
         console.log(logic.currentGame.game.cells);
         logic.restartGameData();
+        console.log("New game is ", logic.currentGame);
         $('.board div').children().remove();
         setUpHandlers();
       }, 3000);
