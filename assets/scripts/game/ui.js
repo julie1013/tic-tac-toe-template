@@ -12,7 +12,6 @@ const drawBoard = function (array) {
 };
 //sets up the board visually
 
-
 const setCell = function (cell, player) {
   $('#' + cell).html
     ('<img src = ../../assets/images/' + player + '.png style="width: 130px">')
@@ -53,7 +52,7 @@ const onError = function (response) {
 
 const onNewGameSuccess = function(data){
   app.game = data.game;
-  console.log(app.game);
+  $('.board').children().attr('disabled', false);
 };
 
 const onGetGamesSuccess = function(data){

@@ -9,6 +9,7 @@ $(document).ready(function () {
   logic.initializeBoard();
   ui.drawBoard(logic.currentGame.game.cells);
   playHandlers.setUpHandlers();
+  $('.board').children().attr('disabled', true);
   $('#sign-up').on('submit', events.onSignUp);
   $('#sign-in').on('submit', events.onSignIn);
   $('#sign-out').on('submit', events.onSignOut);
