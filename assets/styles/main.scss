@@ -72,9 +72,11 @@ form {
   width: 166px;
 }
 
-.display-winner {
+.display-stats {
   border: 1px solid $black;
   float: right;
+  font-family: 'Courgette', cursive;
+  font-size: 30px;
   height: 200px;
   margin-right: 100px;
   margin-top: 25px;

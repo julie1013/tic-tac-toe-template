@@ -70,7 +70,7 @@ const onUpdateBoardSuccess = function(data){
 };
 
 const onGamesPlayedSuccess = function(data){
-  console.log("You've played " + data.games.length + " games so far!");
+  $('.display-stats').html("You've played " + data.games.length + " games so far!");
 };
 
 module.exports = {
