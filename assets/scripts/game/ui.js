@@ -21,6 +21,10 @@ const setCell = function (cell, player) {
 };
 //visually updates cell with player token
 
+const displayWinner = function(){
+  $('.display-winner').html(logic.winnerDeclare(logic.winner));
+};
+
 const onSignUpSuccess = function (data) {
   if (data) {
     console.log(data, "You are signed up!");
@@ -65,13 +69,14 @@ const onUpdateBoardSuccess = function(data){
   console.log(data, "Board is updated on server");
 };
 
-const onGamesWonSuccess = function(data){
-  console.log("You've won!", data);
+const onGamesPlayedSuccess = function(data){
+  console.log("You've played " + data.games.length + " games so far!");
 };
 
 module.exports = {
   drawBoard,
   setCell,
+  displayWinner,
   onSignUpSuccess,
   onSignInSuccess,
   onSignOutSuccess,
@@ -80,6 +85,6 @@ module.exports = {
   onGetGamesSuccess,
   onShowGameSuccess,
   onUpdateBoardSuccess,
-  onGamesWonSuccess,
+  onGamesPlayedSuccess,
   onError,
 };

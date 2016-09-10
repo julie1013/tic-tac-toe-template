@@ -67,11 +67,11 @@ const onUpdateBoard = function (cell) {
   .fail(ui.onError);
 };
 
-const onGamesWon = function(event) {
+const onGamesPlayed = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  api.gamesWon(data)
-    .done(ui.onGamesWonSuccess)
+  api.gamesPlayed(data)
+    .done(ui.onGamesPlayedSuccess)
     .fail(ui.onError);
 };
 
@@ -85,5 +85,5 @@ module.exports = {
   onGetGames,
   onShowGame,
   onUpdateBoard,
-  onGamesWon,
+  onGamesPlayed,
 };

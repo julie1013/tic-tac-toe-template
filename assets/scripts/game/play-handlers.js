@@ -12,6 +12,7 @@ const play = function (cell) {
     events.onUpdateBoard(cell);
     console.log(logic.currentGame.game.cells);
     if (logic.winCheck() || logic.tieCheck()) {
+      ui.displayWinner();
       gameOver();
       $('.board').children().off();
       logic.scoreCounter();

@@ -72,6 +72,16 @@ form {
   width: 166px;
 }
 
+.display-winner {
+  border: 1px solid $black;
+  float: right;
+  height: 200px;
+  margin-right: 100px;
+  margin-top: 25px;
+  text-align: center;
+  width: 300px;
+}
+
 .create-account,
 .sign-in {
   float: right;

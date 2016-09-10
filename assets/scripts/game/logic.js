@@ -117,6 +117,12 @@ const diagonalWin = function () {
 };
 //checks for diagonal setup for possible win
 
+const winnerDeclare = function (winner) {
+  let declaration = "" + winner + " has won this round!";
+  return declaration;
+};
+//Creates a string stating who has won
+
 const winCheck = function () {
   return horizontalWin() || verticalWin() || diagonalWin();
 };
@@ -136,11 +142,9 @@ const tieCheck = function () {
 const scoreCounter = function () {
   if (winner === 'x') {
     xScore++;
-    console.log("x has", xScore + " points");
     return xScore;
   } else if (winner === 'o'){
     oScore++;
-    console.log("o has", oScore + " points");
     return oScore;
   } else {
     return false;
@@ -175,4 +179,6 @@ module.exports = {
   scoreCounter,
   restartGameData,
   setCellData,
+  winnerDeclare,
+  winner,
 };
