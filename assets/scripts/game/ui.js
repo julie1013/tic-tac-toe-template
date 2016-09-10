@@ -48,10 +48,12 @@ const onError = function (response) {
 };
 
 const onNewGameSuccess = function(data){
-  console.log(data);
+  app.game = data.game;
+  console.log(app.game);
 };
 
 const onGetGamesSuccess = function(data){
+  app.games = data.game;
   console.log(data);
 };
 
@@ -61,6 +63,10 @@ const onShowGameSuccess = function(data){
 
 const onUpdateBoardSuccess = function(data){
   console.log(data, "Board is updated on server");
+};
+
+const onGamesWonSuccess = function(data){
+  console.log("You've won!", data);
 };
 
 module.exports = {
@@ -74,5 +80,6 @@ module.exports = {
   onGetGamesSuccess,
   onShowGameSuccess,
   onUpdateBoardSuccess,
+  onGamesWonSuccess,
   onError,
 };

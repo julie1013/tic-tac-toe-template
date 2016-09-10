@@ -42,7 +42,7 @@ const changePassword = function(data){
   });
 };
 
-const index = function () {
+const getGames = function () {
   return $.ajax({
     url: app.host + '/games',
     method: 'GET',
@@ -74,14 +74,34 @@ const showGame = function () {
 };
 
 const updateBoard = function (cell) {
-  let data = logic.currentGame.game.cells[cell];
+  let cellVal = logic.currentGame.game.cells[cell];
+  let gameID = app.game.id;
   return  $.ajax({
-    url: app.host + data,
+    url: app.host + '/games/' + gameID,
     method: "PATCH",
     headers: {
       Authorization: 'Token token=' + app.user.token
     },
-    data: data,
+    data: {
+        "game": {
+          "cell": {
+            "index": cell,
+            "value": cellVal
+          },
+          "over": false
+        }
+      }
+  });
+};
+
+
+const gamesWon = function () {
+  return $.ajax({
+    url: app.host + '/games/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
   });
 };
 
@@ -92,7 +112,8 @@ module.exports = {
   signOut,
   changePassword,
   newGame,
-  index,
+  getGames,
   showGame,
   updateBoard,
+  gamesWon,
 };

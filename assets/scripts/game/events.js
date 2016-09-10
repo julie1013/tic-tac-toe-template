@@ -46,7 +46,7 @@ const onNewGame = function (event) {
 const onGetGames = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  api.index(data)
+  api.getGames(data)
     .done(ui.onGetGamesSuccess)
     .fail(ui.onError);
 };
@@ -67,6 +67,14 @@ const onUpdateBoard = function (cell) {
   .fail(ui.onError);
 };
 
+const onGamesWon = function(event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.gamesWon(data)
+    .done(ui.onGamesWonSuccess)
+    .fail(ui.onError);
+};
+
 
 module.exports = {
   onSignUp,
@@ -77,4 +85,5 @@ module.exports = {
   onGetGames,
   onShowGame,
   onUpdateBoard,
+  onGamesWon,
 };
