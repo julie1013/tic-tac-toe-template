@@ -3,7 +3,6 @@
 const getFormFields = require('../../../lib/get-form-fields');
 const api = require('../game-api');
 const ui = require('./ui');
-const logic = require('./logic');
 
 const onSignUp = function(event) {
   event.preventDefault();
@@ -16,18 +15,26 @@ const onSignUp = function(event) {
 const onSignIn = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  logic.xScore = 0;
-  logic.oScore = 0;
+  $('#sign-in').hide();
+  $('#sign-up').hide();
+  $('#sign-out').show();
+  $('#change-password').show();
+  $('#get-games').show();
+  $('#get-game').show();
   api.signIn(data)
     .done(ui.onSignInSuccess)
     .fail(ui.onError);
-    console.log(logic.xScore, logic.oScore);
 };
 
 const onSignOut = function(event){
   event.preventDefault();
-  logic.xScore = 0;
-  logic.oScore = 0;
+  $('#sign-out').hide();
+  $('#change-password').hide();
+  $('#get-games').hide();
+  $('#get-game').hide();
+  $('#total-games-played').hide();
+  $('#sign-in').show();
+  $('#sign-up').show();
     api.signOut()
     .done(ui.onSignOutSuccess)
     .fail(ui.onError);
@@ -57,14 +64,6 @@ const onGetGames = function (event) {
     .fail(ui.onError);
 };
 
-const onShowGame = function (event) {
-  event.preventDefault();
-  let data = getFormFields(event.target);
-  api.showGame(data)
-    .done(ui.onShowGameSuccess)
-    .fail(ui.onError);
-};
-
 const onUpdateBoard = function (cell) {
   api.updateBoard(cell)
   .done(ui.onUpdateBoardSuccess)
@@ -87,7 +86,6 @@ module.exports = {
   onChangePassword,
   onNewGame,
   onGetGames,
-  onShowGame,
   onUpdateBoard,
   onGamesPlayed,
 };

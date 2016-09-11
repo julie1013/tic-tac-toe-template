@@ -62,17 +62,6 @@ const newGame = function () {
   });
 };
 
-const showGame = function () {
-  let gameID = $('#gameID').val();
-  return $.ajax({
-    url: app.host + '/games/' + gameID,
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-    },
-  });
-};
-
 const updateBoard = function (cell) {
   let cellVal = logic.currentGame.game.cells[cell];
   let gameID = app.game.id;
@@ -111,7 +100,6 @@ module.exports = {
   changePassword,
   newGame,
   getGames,
-  showGame,
   updateBoard,
   gamesPlayed,
 };

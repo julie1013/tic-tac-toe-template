@@ -3,51 +3,54 @@
   <head>
     <meta charset="utf-8">
     <title>Tic CAT Toe</title>
-    <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
-    <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer>
+    </script>
+    <script src="bundle.js" type="text/javascript" charset="utf-8" defer>
+    </script>
     <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Chewy|Courgette" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chewy|Courgette"
+    rel="stylesheet">
   </head>
   <body>
-    <header><span class="tt">Tic-</span><span class="cat">CAT-</span><span class="tt">Toe</span></header>
+    <header><span class="tt">Tic-</span><span class="cat">CAT-</span>
+      <span class="tt">Toe</span></header>
     <aside><img src="assets/images/neptune.jpg" alt="cat"></aside>
     <div class="board clearfix"></div>
     <div class="display-stats"></div>
-  <form id="sign-up">
-    <input name="credentials[email]" type="text" placeholder="email" value="">
+  <form id="sign-up" class="sign-up-form signed-out">
+    <input name="credentials[email]" type="text" placeholder="email"
+    onfocus="this.placeholder =''"value="">
     <input name="credentials[password]" type="password" placeholder="password"
+    onfocus="this.placeholder =''"
       value="">
-    <input name="credentials[password_confirmation]" type="password" placeholder="confirm password"
+    <input name="credentials[password_confirmation]" type="password"
+    placeholder="confirm password" onfocus="this.placeholder =''"
       value="">
     <input type="Submit" value="Sign Up!">
   </form>
-  <form id="sign-in">
-    <input name="credentials[email]" type="text" placeholder="email" value="">
+  <form id="sign-in" class="sign-in-form signed-out">
+    <input name="credentials[email]" type="text" placeholder="email"
+    onfocus="this.placeholder =''" value="">
     <input name="credentials[password]" type="password" placeholder="password"
+    onfocus="this.placeholder =''"
       value="">
     <input type="Submit" value="Sign In!">
   </form>
-  <form id="change-password">
-    <input name="passwords[old]" type="password"
-      placeholder="old password" value="">
-    <input name="passwords[new]" type="password" placeholder="new password" value="">
-    <input type="Submit" value="Change password">
-  </form>
-  <form id="sign-out">
-     <input type="submit" value="Sign Out!">
-  </form>
-  <form id="get-games">
-    <input type="submit" value="Get Games!">
-  </form>
-  <form id="new-game">
+  <form id="new-game" class="new-game-button signed-in">
     <input type="submit" value="New Game!">
   </form>
-  <form id="show-game">
-    <input id="gameID" name="id" type="text" placeholder="id" value="">
-    <input type="Submit" value="Show Game!">
+  <form id="sign-out" class="sign-out-button signed-in">
+     <input type="submit" value="Sign Out!">
   </form>
-  <form id="total-games-played">
-    <input type="submit" value="Get total games you have played!">
+  <form id="get-games" class="get-games-button signed-in">
+    <input type="submit" value="Get Games!">
+  </form>
+  <form id="change-password" class="change-password-form signed-in">
+    <input name="passwords[old]" type="password"
+      placeholder="old password" onfocus="this.placeholder =''" value="">
+    <input name="passwords[new]" type="password" placeholder="new password"
+    onfocus="this.placeholder =''" value="">
+    <input type="Submit" value="Change password">
   </form>
   </body>
 </html>

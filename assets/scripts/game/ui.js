@@ -22,27 +22,32 @@ const setCell = function (cell, player) {
 
 const onSignUpSuccess = function (data) {
   if (data) {
-    console.log(data, "You are signed up!");
+    $('.display-stats').html('You are now signed up! Now go sign in!');
   } else {
-    console.log("Didn't work");
+    $('.display-stats').html("Sorry, there was an error in signing up.");
   }
 };
 
 const onSignInSuccess = function (data) {
-    $('show-x').html('0');
-    $('.show-o').html('0');
     app.user = data.user;
-    console.log("You are now signed in", data);
+    $('.display-stats').html('You are now signed in!');
+    $('#sign-out').show();
+    $('#change-password').show();
+    $('#get-games').show();
+    $('#new-game').show();
 };
 
 const onSignOutSuccess = function(){
-  $('.show-x').html('0');
-  $('.show-o').html('0');
+  $('.display-stats').html('Bye!');
+  $('#sign-out').hide();
+  $('#change-password').hide();
+  $('#get-games').hide();
+  $('#new-game').hide();
   app.user = null;
 };
 
 const onChangePasswordSuccess = function(){
-  console.log("Password successfully changed.");
+  $('.display-stats').html("Password successfully changed.");
 };
 
 const onError = function (response) {
@@ -56,20 +61,11 @@ const onNewGameSuccess = function(data){
 };
 
 const onGetGamesSuccess = function(data){
-  app.games = data.game;
-  console.log(data);
-};
-
-const onShowGameSuccess = function(data){
-  console.log(data);
+  $('.display-stats').html("You've played " + data.games.length + " games so far!");
 };
 
 const onUpdateBoardSuccess = function(data){
   console.log(data, "Board is updated on server");
-};
-
-const onGamesPlayedSuccess = function(data){
-  $('.display-stats').html("You've played " + data.games.length + " games so far!");
 };
 
 module.exports = {
@@ -81,8 +77,6 @@ module.exports = {
   onChangePasswordSuccess,
   onNewGameSuccess,
   onGetGamesSuccess,
-  onShowGameSuccess,
   onUpdateBoardSuccess,
-  onGamesPlayedSuccess,
   onError,
 };

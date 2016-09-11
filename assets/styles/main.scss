@@ -10,8 +10,8 @@ $yellow: #ffef00;
   visibility: hidden;
   }
 
-  body {
-    min-width: 1400px;
+body {
+  min-width: 1400px;
   }
 
 button,
@@ -30,10 +30,10 @@ form,
   // -webkit-box-sizing: border-box;
 }
 
-.create-account,
-.sign-in,
-.display-stats {
-  float: right;
+.sign-up-form,
+.sign-in-form,
+.change-password-form {
+  width: 250px;
 };
 
 button,
@@ -46,14 +46,35 @@ header,
   text-align: center;
 }
 
+
+.create-account,
+.display-stats {
+  float: right;
+};
+
 .display-stats,
-.ttt {
+.tt {
   font-family: 'Courgette', cursive;
 }
 
 .board,
 .display-stats {
   margin-top: 25px;
+}
+
+.sign-up-form,
+.sign-in-form {
+  margin-right: 125px;
+};
+
+.sign-up-form,
+.new-game-button {
+  margin-top: -300px;
+}
+
+.signed-in,
+.signed-out {
+  float: right;
 }
 
 aside {
@@ -68,8 +89,32 @@ img {
   width: 375px;
 }
 
+.new-game-button {
+  margin-right: 200px;
+  margin-top: -320px;
+}
+
+.sign-out-button {
+  margin-right: 210px;
+  margin-top: -280px;
+}
+
+.get-games-button {
+  margin-right: 200px;
+  margin-top: -240px;
+}
+
+.change-password-form {
+  margin-right: 65px;
+  margin-top: -200px;
+}
+
+.sign-in-form {
+  margin-top: -200px;
+}
 
 .display-stats {
+  border-radius: 10px;
   font-size: 30px;
   height: 200px;
   margin-right: 100px;
@@ -90,7 +135,7 @@ img {
   height: 500px;
   margin: 0 auto;
   margin-bottom: 50px;
-  margin-left: 50px;
+  margin-left: 75px;
   width: 500px;
 }
 
