@@ -66,17 +66,14 @@ const horizontalWin = function () {
         currentGame.game.cells[0] === currentGame.game.cells[1] &&
         currentGame.game.cells[0] === currentGame.game.cells[2]) {
       winner = currentGame.game.cells[0];
-      console.log(winner, "horizontal win");
     } else if (currentGame.game.cells[3]  &&
               currentGame.game.cells[3] === currentGame.game.cells[4] &&
               currentGame.game.cells[3] === currentGame.game.cells[5]) {
       winner = currentGame.game.cells[3];
-      console.log(winner, "horizontal win");
     } else if (currentGame.game.cells[6] &&
               currentGame.game.cells[6] === currentGame.game.cells[7] &&
               currentGame.game.cells[6] === currentGame.game.cells[8]) {
       winner = currentGame.game.cells[6];
-      console.log(winner, "horizontal win");
     }
     return winner;
   };
@@ -87,17 +84,14 @@ const verticalWin = function () {
         currentGame.game.cells[0] === currentGame.game.cells[3] &&
         currentGame.game.cells[0] === currentGame.game.cells[6]) {
       winner = currentGame.game.cells[0];
-      console.log(winner, "vertical win");
     } else if (currentGame.game.cells[1] &&
       currentGame.game.cells[1] === currentGame.game.cells[4] &&
       currentGame.game.cells[1] === currentGame.game.cells[7]) {
       winner = currentGame.game.cells[1];
-      console.log(winner, "vertical win");
     } else if (currentGame.game.cells[2] &&
               currentGame.game.cells[2] === currentGame.game.cells[5] &&
               currentGame.game.cells[2] === currentGame.game.cells[8]) {
       winner = currentGame.game.cells[2];
-      console.log(winner, "vertical win");
     }
     return winner;
   };
@@ -110,7 +104,6 @@ const diagonalWin = function () {
       currentGame.game.cells[4] === currentGame.game.cells[2] &&
       currentGame.game.cells[4] === currentGame.game.cells[6]) {
       winner = currentGame.game.cells[4];
-      console.log(winner, "diagonal win");
     }
   }
   return winner;
@@ -119,7 +112,7 @@ const diagonalWin = function () {
 
 const winnerDeclare = function (winner) {
   let declaration = "" + winner + " has won this round!";
-  return declaration;
+  $('.display-stats').html(declaration);
 };
 //Creates a string stating who has won
 

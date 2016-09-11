@@ -21,8 +21,9 @@ const setCell = function (cell, player) {
 //visually updates cell with player token
 
 const displayWinner = function(){
-  $('.display-winner').html(logic.winnerDeclare(logic.winner));
+  $('.display-stats').html(logic.winnerDeclare(logic.winner));
 };
+//visually displays winner
 
 const onSignUpSuccess = function (data) {
   if (data) {

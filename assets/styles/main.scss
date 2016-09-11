@@ -1,29 +1,5 @@
 $black: #000;
 
-header {
-  text-align: center;
-}
-
-button {
-  clear: both;
-  float: left;
-}
-
-form {
-  clear: both;
-  float: left;
-}
-
-.tt {
-  font-family: 'Courgette', cursive;
-  font-size: 60px;
-}
-
-.cat {
-  font-family: 'Chewy', cursive;
-  font-size: 70px;
-}
-
 .clearfix::after {
   clear: both;
   content: ' ';
@@ -33,69 +9,101 @@ form {
   visibility: hidden;
   }
 
+button,
+form,
+.score-board,
+.board,
+.square,
+.x-score,
+.o-score {
+  float: left;
+}
+
+header,
+.display-stats,
 .score-board {
+  text-align: center;
+}
+
+.score-board,
+.board,
+.square,
+.display-stats,
+.x-score,
+.o-score {
   border: 1px solid $black;
   box-sizing: border-box;
+  // -moz-box-sizing: border-box;
+  // -webkit-box-sizing: border-box;
+}
+
+button,
+form,
+.score-board {
   clear: both;
-  float: left;
+}
+
+
+display-stats,
+.ttt,
+.score-board {
   font-family: 'Courgette', cursive;
+}
+
+.score-board,
+.board,
+.display-stats {
+  margin-top: 25px;
+}
+
+.create-account,
+.sign-in,
+.display-stats {
+  float: right;
+};
+
+.score-board,
+.display-stats {
+  width: 300px;
+}
+
+.x-score,
+.o-score {
+  height: 299px;
+  width: 149px;
+};
+
+.tt {
+  font-size: 60px;
+}
+
+.cat {
+  font-family: 'Chewy', cursive;
+  font-size: 70px;
+}
+
+.score-board {
   font-size: 25px;
   height: 300px;
   margin-left: 50px;
   margin-right: -50px;
-  margin-top: 25px;
-  text-align: center;
-  width: 300px;
 }
 
 .board {
-  border: 1px solid $black;
-  // -moz-box-sizing: border-box;
-  // -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  float: left;
   height: 500px;
   margin: 0 auto;
   margin-bottom: 50px;
   margin-left: 150px;
-  margin-top: 25px;
   width: 500px;
 }
 
 .square {
-  border: 1px solid $black;
-  // -moz-box-sizing: border-box;
-  // -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  float: left;
   height: 166px;
   width: 166px;
 }
 
 .display-stats {
-  border: 1px solid $black;
-  float: right;
-  font-family: 'Courgette', cursive;
   font-size: 30px;
   height: 200px;
   margin-right: 100px;
-  margin-top: 25px;
-  text-align: center;
-  width: 300px;
 }
-
-.create-account,
-.sign-in {
-  float: right;
-};
-
-.x-score,
-.o-score {
-  border: 1px solid $black;
-  // -moz-box-sizing: border-box;
-  // -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  float: left;
-  height: 299px;
-  width: 149px;
-};
