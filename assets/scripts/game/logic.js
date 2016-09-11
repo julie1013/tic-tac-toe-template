@@ -3,8 +3,6 @@
 let player;
 let whoseTurn = 0;
 let winner;
-let xScore = 0;
-let oScore = 0;
 
 let currentGame = {
   game: {
@@ -27,7 +25,6 @@ const initializeBoard = function () {
   for (let i = 0; i < 9; i++) {
     currentGame.game.cells.push("");
   }
-  console.log(currentGame.game.cells);
 };
 //sets up an array for the board
 
@@ -126,17 +123,11 @@ const tieCheck = function () {
 };
 //checks for a tie condition
 
-const scoreCounter = function () {
+// const scoreCounter = function () {
+const displayWinner = function () {
   if (winner === null) {
     $('.display-stats').html("It's a tie!");
   } else if (winner){
-    if (winner === 'x') {
-    xScore++;
-    $('.show-x').html(xScore);
-  } else if (winner === 'o'){
-    oScore++;
-    $('.show-o').html(oScore);
-    }
   $('.display-stats').html('' + winner + ' has won the game.');
   }
 };
@@ -155,8 +146,6 @@ module.exports = {
   currentGame,
   player,
   whoseTurn,
-  xScore,
-  oScore,
   initializeBoard,
   isPlayerTurn,
   turnSwitch,
@@ -166,7 +155,7 @@ module.exports = {
   diagonalWin,
   winCheck,
   tieCheck,
-  scoreCounter,
+  displayWinner,
   restartGameData,
   setCellData,
   winner,

@@ -11,49 +11,18 @@ $black: #000;
 
 button,
 form,
-.score-board,
 .board,
-.square,
-.x-score,
-.o-score {
+.square {
   float: left;
 }
 
-header,
-.display-stats,
-.score-board {
-  text-align: center;
-}
-
-.score-board,
 .board,
 .square,
-.display-stats,
-.x-score,
-.o-score {
+.display-stats {
   border: 1px solid $black;
   box-sizing: border-box;
   // -moz-box-sizing: border-box;
   // -webkit-box-sizing: border-box;
-}
-
-button,
-form,
-.score-board {
-  clear: both;
-}
-
-
-.display-stats,
-.ttt,
-.score-board {
-  font-family: 'Courgette', cursive;
-}
-
-.score-board,
-.board,
-.display-stats {
-  margin-top: 25px;
 }
 
 .create-account,
@@ -62,23 +31,31 @@ form,
   float: right;
 };
 
-.score-board,
-.display-stats {
-  width: 300px;
+button,
+form {
+  clear: both;
 }
 
-.x-score,
-.o-score {
-  height: 299px;
-  width: 149px;
-};
-
-.show-x,
-.show-o {
-  height: 50px;
-  margin: 0 auto;
+header,
+.display-stats {
   text-align: center;
-  width: 50px;
+}
+
+.display-stats,
+.ttt {
+  font-family: 'Courgette', cursive;
+}
+
+.board,
+.display-stats {
+  margin-top: 25px;
+}
+
+.display-stats {
+  font-size: 30px;
+  height: 200px;
+  margin-right: 100px;
+  width: 300px;
 }
 
 .tt {
@@ -90,28 +67,15 @@ form,
   font-size: 70px;
 }
 
-.score-board {
-  font-size: 25px;
-  height: 300px;
-  margin-left: 50px;
-  margin-right: -50px;
-}
-
 .board {
   height: 500px;
   margin: 0 auto;
   margin-bottom: 50px;
-  margin-left: 150px;
+  margin-left: 450px;
   width: 500px;
 }
 
 .square {
   height: 166px;
   width: 166px;
-}
-
-.display-stats {
-  font-size: 30px;
-  height: 200px;
-  margin-right: 100px;
 }
