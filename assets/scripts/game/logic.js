@@ -135,12 +135,12 @@ const tieCheck = function () {
 const scoreCounter = function () {
   if (winner === 'x') {
     xScore++;
-    return xScore;
+    $('.show-x').html(xScore);
   } else if (winner === 'o'){
     oScore++;
-    return oScore;
+    $('.show-o').html(oScore);
   } else {
-    return false;
+    $('.display-stats').html("It's a tie!");
   }
 };
 //keeps track of wins

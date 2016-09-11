@@ -20,6 +20,7 @@ const setCell = function (cell, player) {
 };
 //visually updates cell with player token
 
+
 const displayWinner = function(){
   $('.display-stats').html(logic.winnerDeclare(logic.winner));
 };
