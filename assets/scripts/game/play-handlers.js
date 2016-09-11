@@ -16,10 +16,9 @@ const play = function (cell) {
       $('.board').children().off();
       logic.scoreCounter();
       setTimeout(function () {
-        console.log(logic.currentGame.game.cells);
         logic.restartGameData();
-        console.log("New game is ", logic.currentGame);
         $('.board div').children().remove();
+        $('.display-stats').html('');
         setUpHandlers();
         $('.board div').css("pointer-events", "none");
       }, 3000);

@@ -20,12 +20,6 @@ const setCell = function (cell, player) {
 };
 //visually updates cell with player token
 
-
-const displayWinner = function(){
-  $('.display-stats').html(logic.winnerDeclare(logic.winner));
-};
-//visually displays winner
-
 const onSignUpSuccess = function (data) {
   if (data) {
     console.log(data, "You are signed up!");
@@ -35,12 +29,15 @@ const onSignUpSuccess = function (data) {
 };
 
 const onSignInSuccess = function (data) {
+    $('show-x').html('0');
+    $('.show-o').html('0');
     app.user = data.user;
     console.log("You are now signed in", data);
 };
 
 const onSignOutSuccess = function(){
-  console.log("You are now signed out!");
+  $('.show-x').html('0');
+  $('.show-o').html('0');
   app.user = null;
 };
 
@@ -52,9 +49,9 @@ const onError = function (response) {
   console.error(response);
 };
 
+
 const onNewGameSuccess = function(data){
   app.game = data.game;
-  console.log("hi");
   $('.board div').css("pointer-events", "auto");
 };
 
@@ -78,7 +75,6 @@ const onGamesPlayedSuccess = function(data){
 module.exports = {
   drawBoard,
   setCell,
-  displayWinner,
   onSignUpSuccess,
   onSignInSuccess,
   onSignOutSuccess,

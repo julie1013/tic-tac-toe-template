@@ -110,12 +110,6 @@ const diagonalWin = function () {
 };
 //checks for diagonal setup for possible win
 
-const winnerDeclare = function (winner) {
-  let declaration = "" + winner + " has won this round!";
-  $('.display-stats').html(declaration);
-};
-//Creates a string stating who has won
-
 const winCheck = function () {
   return horizontalWin() || verticalWin() || diagonalWin();
 };
@@ -133,14 +127,17 @@ const tieCheck = function () {
 //checks for a tie condition
 
 const scoreCounter = function () {
-  if (winner === 'x') {
+  if (winner === null) {
+    $('.display-stats').html("It's a tie!");
+  } else if (winner){
+    if (winner === 'x') {
     xScore++;
     $('.show-x').html(xScore);
   } else if (winner === 'o'){
     oScore++;
     $('.show-o').html(oScore);
-  } else {
-    $('.display-stats').html("It's a tie!");
+    }
+  $('.display-stats').html('' + winner + ' has won the game.');
   }
 };
 //keeps track of wins
@@ -172,6 +169,5 @@ module.exports = {
   scoreCounter,
   restartGameData,
   setCellData,
-  winnerDeclare,
   winner,
 };

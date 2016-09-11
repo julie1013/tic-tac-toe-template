@@ -3,6 +3,7 @@
 const getFormFields = require('../../../lib/get-form-fields');
 const api = require('../game-api');
 const ui = require('./ui');
+const logic = require('./logic');
 
 const onSignUp = function(event) {
   event.preventDefault();
@@ -15,13 +16,18 @@ const onSignUp = function(event) {
 const onSignIn = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
+  logic.xScore = 0;
+  logic.oScore = 0;
   api.signIn(data)
     .done(ui.onSignInSuccess)
     .fail(ui.onError);
+    console.log(logic.xScore, logic.oScore);
 };
 
 const onSignOut = function(event){
   event.preventDefault();
+  logic.xScore = 0;
+  logic.oScore = 0;
     api.signOut()
     .done(ui.onSignOutSuccess)
     .fail(ui.onError);
@@ -60,8 +66,6 @@ const onShowGame = function (event) {
 };
 
 const onUpdateBoard = function (cell) {
-  console.log("on onUpdateBoard");
-  console.log(cell);
   api.updateBoard(cell)
   .done(ui.onUpdateBoardSuccess)
   .fail(ui.onError);
