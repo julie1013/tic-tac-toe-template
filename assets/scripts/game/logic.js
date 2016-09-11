@@ -123,7 +123,6 @@ const tieCheck = function () {
 };
 //checks for a tie condition
 
-// const scoreCounter = function () {
 const displayWinner = function () {
   if (winner === null) {
     $('.display-stats').html("It's a tie!");
@@ -131,7 +130,7 @@ const displayWinner = function () {
   $('.display-stats').html('' + winner + ' has won the game.');
   }
 };
-//keeps track of wins
+//displays winner
 
 const restartGameData = function () {
   currentGame.game.over = false;

@@ -1,4 +1,5 @@
 $black: #000;
+$yellow: #ffef00;
 
 .clearfix::after {
   clear: both;
@@ -7,6 +8,10 @@ $black: #000;
   font-size: 0;
   height: 0;
   visibility: hidden;
+  }
+
+  body {
+    min-width: 1400px;
   }
 
 button,
@@ -51,6 +56,19 @@ header,
   margin-top: 25px;
 }
 
+aside {
+  float: left;
+  height: 513px;
+  margin-left: 15px;
+  width: 375px;
+}
+
+img {
+  border-radius: 20px;
+  width: 375px;
+}
+
+
 .display-stats {
   font-size: 30px;
   height: 200px;
@@ -68,14 +86,20 @@ header,
 }
 
 .board {
+  border-radius: 20px;
   height: 500px;
   margin: 0 auto;
   margin-bottom: 50px;
-  margin-left: 450px;
+  margin-left: 50px;
   width: 500px;
 }
 
 .square {
+  border-radius: 18px;
   height: 166px;
   width: 166px;
+}
+
+.square:hover {
+  background-color: $yellow;
 }
