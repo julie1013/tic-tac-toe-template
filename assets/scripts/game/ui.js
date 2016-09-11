@@ -52,7 +52,8 @@ const onError = function (response) {
 
 const onNewGameSuccess = function(data){
   app.game = data.game;
-  $('.board').children().attr('disabled', false);
+  console.log("hi");
+  $('.board div').css("pointer-events", "auto");
 };
 
 const onGetGamesSuccess = function(data){

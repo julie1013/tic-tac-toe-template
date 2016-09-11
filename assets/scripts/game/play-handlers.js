@@ -22,6 +22,7 @@ const play = function (cell) {
         console.log("New game is ", logic.currentGame);
         $('.board div').children().remove();
         setUpHandlers();
+        $('.board div').css("pointer-events", "none");
       }, 3000);
     } else {
       logic.turnSwitch();
