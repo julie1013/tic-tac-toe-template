@@ -21,7 +21,6 @@ token appear)
 6.As a user, I want to to be notified in a clear and fun way that I've won the
 game, or that the game is a tie.
 
-
 To make Tic-CAT-Toe, I used JavaScript, jQuery, HTML, and a little bit of
 bootstrap.
 
@@ -41,13 +40,13 @@ Very basic components included: Initializing the board in the game logic,
 drawing a visual representation of the board in the browser, setting a cell
 (that is, finishing a move with either an x or an o).
 
-Since there is not an apparently "efficient" way to check for winning conditions,
-I created three functions: one for checking horizontally, one for checking
-vertically, and one for checking diagonally. I also created a function that
-checks for a tie. A function called winCheck runs the first three functions
-and returns a winner. If none of the conditions are returned true by the end
-of the game, a tie is declared. Declaring a tie merely involved counting nine
-moves without a win condition occurring.
+Since there is not an apparently "efficient" way to check for winning
+conditions,I created three functions: one for checking horizontally,
+one for checking vertically, and one for checking diagonally. I also created
+a function that checks for a tie. A function called winCheck runs the first
+three functions and returns a winner. If none of the conditions are returned
+true by the end of the game, a tie is declared. Declaring a tie merely
+involved counting nine moves without a win condition occurring.
 
 Otherwise, I kept my code as efficient as humanly possible: in the scss, I
 grouped classes together when they had the same values. In the JavaScript,
@@ -74,3 +73,7 @@ has won) to the appropriate tokens.
 
 Creating error messages for incorrect passwords and passwords that don't match
 when creating a new account.
+
+In future iterations of this game, I would like to do more with the cat
+theme (noises, hand-drawn tokens, etc), but as the theme was not the main
+focus of the project and the coding was first priority, this was not possible.

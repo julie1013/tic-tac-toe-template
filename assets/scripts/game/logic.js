@@ -133,6 +133,11 @@ const displayWinner = function () {
 };
 //displays winner
 
+const winnerDeclare = function () {
+  let declaration = "" + winner + " has won this round!";
+  return declaration;
+};
+
 const restartGameData = function () {
   currentGame.game.over = false;
   initializeBoard(currentGame.game.cells);
@@ -159,4 +164,5 @@ module.exports = {
   restartGameData,
   setCellData,
   winner,
+  winnerDeclare,
 };
