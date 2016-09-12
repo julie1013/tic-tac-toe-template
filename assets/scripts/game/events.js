@@ -66,7 +66,7 @@ const onGetGames = function (event) {
 
 const onUpdateBoard = function (cell) {
   api.updateBoard(cell)
-  .done(ui.onUpdateBoardSuccess)
+  .done()
   .fail(ui.onError);
 };
 

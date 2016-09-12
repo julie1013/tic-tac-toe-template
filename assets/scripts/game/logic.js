@@ -123,6 +123,7 @@ const tieCheck = function () {
 };
 //checks for a tie condition
 
+
 const displayWinner = function () {
   if (winner === null) {
     $('.display-stats').html("It's a tie!");

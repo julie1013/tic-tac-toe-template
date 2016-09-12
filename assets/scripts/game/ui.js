@@ -62,10 +62,6 @@ const onGetGamesSuccess = function(data){
   $('.display-stats').html("You've played " + data.games.length + " games so far!");
 };
 
-const onUpdateBoardSuccess = function(data){
-  console.log(data, "Board is updated on server");
-};
-
 module.exports = {
   drawBoard,
   setCell,
@@ -75,6 +71,5 @@ module.exports = {
   onChangePasswordSuccess,
   onNewGameSuccess,
   onGetGamesSuccess,
-  onUpdateBoardSuccess,
   onError,
 };

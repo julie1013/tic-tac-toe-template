@@ -10,7 +10,6 @@ const play = function (cell) {
     logic.setCellData(cell, logic.player);
     ui.setCell(cell, logic.player);
     events.onUpdateBoard(cell);
-    console.log(logic.currentGame.game.cells);
     if (logic.winCheck() || logic.tieCheck()) {
       gameOver();
       $('.board').children().off();
