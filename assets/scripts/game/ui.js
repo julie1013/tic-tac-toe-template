@@ -56,6 +56,7 @@ const onError = function (response) {
 const onNewGameSuccess = function(data){
   app.game = data.game;
   $('.board div').css("pointer-events", "auto");
+  $('.display-stats').html('');
 };
 
 const onGetGamesSuccess = function(data){
