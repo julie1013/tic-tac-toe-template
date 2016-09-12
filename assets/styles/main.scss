@@ -1,5 +1,6 @@
 $black: #000;
 $yellow: #ffef00;
+$lightblue: #add8e6;
 
 .clearfix::after {
   clear: both;
@@ -131,6 +132,7 @@ img {
 }
 
 .board {
+  background: $black;
   border-radius: 20px;
   height: 500px;
   margin: 0 auto;
@@ -140,6 +142,7 @@ img {
 }
 
 .square {
+  background: $lightblue;
   border-radius: 18px;
   height: 166px;
   width: 166px;
@@ -147,4 +150,10 @@ img {
 
 .square:hover {
   background-color: $yellow;
+}
+
+.token {
+  border-radius: 70px;
+  margin-left: 15px;
+  margin-top: 15px;
 }

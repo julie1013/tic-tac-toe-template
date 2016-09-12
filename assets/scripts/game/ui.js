@@ -14,7 +14,7 @@ const drawBoard = function (array) {
 
 const setCell = function (cell, player) {
   $('#' + cell).html
-    ('<img src = ../../assets/images/' + player + '.png style="width: 130px">')
+    ('<img src = ../../assets/images/' + player + '.png style="width: 130px" class="token">')
       .off();
     logic.setCellData(cell, player);
 };
@@ -23,8 +23,6 @@ const setCell = function (cell, player) {
 const onSignUpSuccess = function (data) {
   if (data) {
     $('.display-stats').html('You are now signed up! Now go sign in!');
-  } else {
-    $('.display-stats').html("Sorry, there was an error in signing up.");
   }
 };
 
@@ -51,7 +49,7 @@ const onChangePasswordSuccess = function(){
 };
 
 const onError = function (response) {
-  console.error(response);
+  $('.display-stats').html(response);
 };
 
 
