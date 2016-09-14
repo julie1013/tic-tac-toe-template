@@ -219,7 +219,7 @@ webpackJsonp([0],[
 	//checks for a tie condition
 
 
-	var displayWinner = function displayWinner() {
+	var displayWinner = function displayWinner(winner) {
 	  if (winner === null) {
 	    $('.display-stats').html("It's a tie!");
 	  } else if (winner) {

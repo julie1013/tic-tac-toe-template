@@ -124,7 +124,7 @@ const tieCheck = function () {
 //checks for a tie condition
 
 
-const displayWinner = function () {
+const displayWinner = function (winner) {
   if (winner === null) {
     $('.display-stats').html("It's a tie!");
   } else if (winner){
