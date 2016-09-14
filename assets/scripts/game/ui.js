@@ -14,7 +14,7 @@ const drawBoard = function (array) {
 
 const setCell = function (cell, player) {
   $('#' + cell).html
-    ('<img src = ../../assets/images/' + player + '.png style="width: 130px" class="token">')
+    ('<img src = assets/images/' + player + '.png style="width: 130px" class="token">')
       .off();
     logic.setCellData(cell, player);
 };
