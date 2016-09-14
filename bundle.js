@@ -112,7 +112,7 @@ webpackJsonp([0],[
 
 	var player = void 0;
 	var whoseTurn = 0;
-	var winner = void 0;
+	var winner = null;
 
 	var currentGame = {
 	  game: {

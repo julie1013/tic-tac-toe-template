@@ -2,7 +2,7 @@
 
 let player;
 let whoseTurn = 0;
-let winner;
+let winner = null;
 
 let currentGame = {
   game: {
