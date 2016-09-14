@@ -282,7 +282,7 @@ webpackJsonp([0],[
 	//sets up the board visually
 
 	var setCell = function setCell(cell, player) {
-	  $('#' + cell).html('<img src = ../../assets/images/' + player + '.png style="width: 130px" class="token">').off();
+	  $('#' + cell).html('<img src = assets/images/' + player + '.png style="width: 130px" class="token">').off();
 	  logic.setCellData(cell, player);
 	};
 	//visually updates cell with player token
