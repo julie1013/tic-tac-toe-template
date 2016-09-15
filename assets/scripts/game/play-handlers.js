@@ -13,7 +13,7 @@ const play = function (cell) {
     if (logic.winCheck() || logic.tieCheck()) {
       gameOver();
       $('.board').children().off();
-      logic.displayWinner();
+      logic.displayWinner(logic.winner);
       setTimeout(function () {
         logic.restartGameData();
         $('.board div').children().remove();
