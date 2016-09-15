@@ -219,7 +219,7 @@ webpackJsonp([0],[
 	//checks for a tie condition
 
 
-	var displayWinner = function displayWinner(winner) {
+	var displayWinner = function displayWinner() {
 	  if (winner === null) {
 	    $('.display-stats').html("It's a tie!");
 	  } else if (winner) {
@@ -349,7 +349,8 @@ webpackJsonp([0],[
 	'use strict';
 
 	var app = {
-	  host: 'https://aqueous-atoll-85096.herokuapp.com/'
+	  // host: 'https://aqueous-atoll-85096.herokuapp.com/',
+	  host: 'http://tic-tac-toe.wdibos.com'
 	};
 
 	module.exports = app;
