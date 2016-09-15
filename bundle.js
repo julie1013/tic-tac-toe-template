@@ -72,7 +72,7 @@ webpackJsonp([0],[
 	  if (logic.winCheck() || logic.tieCheck()) {
 	    gameOver();
 	    $('.board').children().off();
-	    logic.displayWinner(logic.winner);
+	    logic.displayWinner();
 	    setTimeout(function () {
 	      logic.restartGameData();
 	      $('.board div').children().remove();
@@ -219,7 +219,7 @@ webpackJsonp([0],[
 	//checks for a tie condition
 
 
-	var displayWinner = function displayWinner(winner) {
+	var displayWinner = function displayWinner() {
 	  if (winner === null) {
 	    $('.display-stats').html("It's a tie!");
 	  } else if (winner) {
