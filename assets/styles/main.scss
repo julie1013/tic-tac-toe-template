@@ -26,7 +26,6 @@ form,
 .square,
 .display-stats {
   border: 1px solid $black;
-  box-sizing: border-box;
   // -moz-box-sizing: border-box;
   // -webkit-box-sizing: border-box;
 }
@@ -144,8 +143,8 @@ img {
 .square {
   background: $lightblue;
   border-radius: 18px;
-  height: 166px;
-  width: 166px;
+  height: 165.8px;
+  width: 165.8px;
 }
 
 .square:hover {
